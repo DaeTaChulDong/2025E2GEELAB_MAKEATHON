@@ -1,0 +1,27 @@
+from jikko.jikko import *
+
+jk=Pyjikko()
+
+#포트 번호 개별적으로 바꾸기
+PORT='COM4'
+SERVO=8
+TRIG=13
+ECHO=12
+
+jk.serial_connect(PORT)
+jk.start()
+
+jk.lcd_set(0x27,16,2)
+
+while():
+	distance=jk.sonic_read(TRIG, ECHO)
+	jk.lcd_display(0,0,str(distance))
+	jk.servo_degree(SERVO,0)
+	time.sleep(1)
+	
+	if distance>15:
+		jk.servo_degree(SERVO,90)
+		time.sleep(1)
+	
+	jk.lcd_clear()
+		
