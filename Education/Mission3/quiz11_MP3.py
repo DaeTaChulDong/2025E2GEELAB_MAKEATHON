@@ -10,6 +10,7 @@ jk.start()
 jk.mp3_set(RX,TX)
 jk.mp3_volume(20)
 
-while():
+while True:
 	jk.mp3_play(1)
+
 	time.sleep(3)
