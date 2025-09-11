@@ -12,7 +12,8 @@ jk.start()
 
 jk.lcd_set(0x27,16,2)
 
-while():
+while True:
 	jk.lcd_display(0,0,str(jk.sonic_read(TRIG,ECHO)))
 	time.sleep(1)
+
 	jk.lcd_clear()
