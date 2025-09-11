@@ -10,10 +10,11 @@ LED=5
 jk.serial_connect(PORT)
 jk.start()
 
-while ():
+while True:
 	jk.led_pwm(LED,200)
 	time.sleep(1)
 	jk.led_pwm(LED,100)
 	time.sleep(1)
 	jk.led_pwm(LED,10)
+
 	time.sleep(1)
