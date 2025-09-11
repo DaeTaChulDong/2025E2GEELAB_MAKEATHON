@@ -11,7 +11,7 @@ LED=5
 jk.serial_connect(PORT)
 jk.start()
 
-while():
+while True:
 	jk.led_digital(LED,HIGH)
 	jk.buzzer(BUZZER, 131,1)
 	jk.buzzer(BUZZER, 147,1)
@@ -21,4 +21,5 @@ while():
 	
 	jk.led_digital(LED,LOW)
 	time.sleep(3)
+
 	
