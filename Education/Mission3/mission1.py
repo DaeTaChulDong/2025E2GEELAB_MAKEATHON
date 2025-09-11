@@ -11,7 +11,7 @@ jk.start()
 jk.lcd_set(0x27,16,2)
 jk.neopixel_set(NEO,4)
 
-while():
+while True:
 	lux=jk.cds_read(pin)
 	jk.lcd_display(0,0,str(light))
 	if lux<200:
@@ -25,3 +25,4 @@ while():
 		jk.neopixel_display_all(NEO,0,255,0)
 		time.sleep(1)
 	jk.neopixel_clear(NEO)
+
