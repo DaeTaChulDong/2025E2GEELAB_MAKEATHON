@@ -15,7 +15,7 @@ jk.neopixel_set(NEO,4)
 jk.neopixel_bright(NEO,20)
 jk.lcd_set(0x27,16,2)
 
-while():
+while True:
 	lux=jk.cds_read(CDS)
 	jk.lcd_display(0,0,str(light))
 	if light>=500:
@@ -26,4 +26,5 @@ while():
 		jk.mp3_play(2)
 		time.sleep(2)
 	else:
+
 		jk.neopixel_clear(NEO)
