@@ -9,10 +9,11 @@ SERVO=8
 jk.serial_connect(PORT)
 jk.start()
 
-while():
+while True:
 	jk.servo_degree(SERVO,0)
 	time.sleep(1)
 	jk.servo_degree(SERVO,90)
 	time.sleep(1)
 	jk.servo_degree(SERVO,180)
+
 	time.sleep(1)
