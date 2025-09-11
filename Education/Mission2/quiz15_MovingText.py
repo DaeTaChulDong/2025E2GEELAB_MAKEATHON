@@ -10,7 +10,7 @@ jk.start()
 
 jk.lcd_set(0x27,16,2)
 
-while():
+while True:
 	jk.lcd_display(0,0,"hello")
 	time.sleep(1)
 	jk.lcd_clear()
@@ -22,4 +22,5 @@ while():
 	jk.lcd_clear()
 	jk.lcd_display(3,0,"hello")
 	time.sleep(1)
+
 	jk.lcd_clear()
