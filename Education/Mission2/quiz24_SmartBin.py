@@ -11,7 +11,7 @@ jk.start()
 
 jk.lcd_set(0x27,16,2)
 
-while():
+while True:
 	distance=jk.sonic_read(TRIG,ECHO)
 	jk.lcd_display(0,0,str(distance))
 	time.sleep(1)
@@ -23,4 +23,5 @@ while():
 	else:
 		jk.servo_degree(SERVO,0)
 		
+
 	jk.lcd_clear()
