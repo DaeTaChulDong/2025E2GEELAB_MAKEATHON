@@ -2,11 +2,13 @@
 
 # 기본 연결
 from jikko.jikko import *
+
 jk=Pyjikko()
 
 PORT='COM4' //포트 번호는 따로 확인하여 연결
 
 jk.serial_connect(PORT)
+
 jk.start()
 
 # LED와 부저(빛 On/Off 출력, 원하는 계이름 연주)
@@ -48,6 +50,8 @@ while True:
 # 서보모터(서보모터를 원하는 각도로 움직일 수 있음)
 jk.servo_degree(pin,write) //연결된 핀번호, 서보모터 각도(0~180)
 jk.servo_degree(SERVO,90) //예시 코드
+
+time.sleep(1) //서보모터 코드 이후 time.sleep코드 필요
 
 # 네오픽셀(네오픽셀:RGB로 여러 색 표현)
 jk.neopixel_set(pin,num) //네오픽셀 사용 전 세팅 코드: 핀번호, LED 개수
@@ -91,3 +95,26 @@ jk.temp_read(pin)
 jk.humi_read(pin)
 //온습도 센서 이용하여 각각 온도/습도 값 읽기
 jk.lcd_display(0,0,str(jk.temp_read(TEM_HUM))) //LCD첫째줄에 온도 표시
+
+# 토양수분센서(토양의 수분량을 측정)
+jk.soil_read(pin) //토양수분센서가 연결된 핀번호
+
+jk.soil_read(A1) //직코에서는 A1에 연결되어 있기 때문에 A1을 입력
+
+# 타이머와 난수
+time.time() //현재 시간을 초 단위로 반환하는 코드
+
+start_time=time.time() //시작 시간 측정
+
+timer_value=time.time()-start.time //실행에 걸린 시간 측정
+
+start_time=time.time() //타이머 초기화
+
+jk.lcd_display(0,0,str(round(timer_value))) //반올림하여 정수로 변환한 뒤 문자열 반환하여 LCD에 출력하기
+
+//난수 코드를 사용하기 위해 
+import random
+
+random.randint(a,b) //a와 b 사이 임의의 정수 반환
+random.randint(1,10) //1에서 10 사이 임의의 정수 반환
+
