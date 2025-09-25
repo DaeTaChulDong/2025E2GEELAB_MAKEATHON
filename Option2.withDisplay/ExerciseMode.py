@@ -57,8 +57,8 @@ def run_exercise_mode():
     
     # 동작별 영상 파일 경로
     video_paths = {
-        "raise": "C:\\Users\\bear3\\Desktop\\EGLAB\\Code\\자세1.mp4",    # 첫 번째 자세
-        "hands_on_waist": "C:\\Users\\bear3\\Desktop\\EGLAB\\Code\\자세2.mp4"  # 두 번째 자세
+        "raise": "자세1 동영상 파일 경로",    # 첫 번째 자세
+        "hands_on_waist": "자세2 동영상 파일 경로"  # 두 번째 자세
     }
     
     # 현재 동작에 맞는 영상 열기
@@ -236,4 +236,5 @@ def run_exercise_mode():
     ref.release()
     cv2.destroyAllWindows()
     play_random_mp3(arduino_controller)  # 운동 모드 종료 안내
+
     control_led(arduino_controller, 'off')
